@@ -14,6 +14,8 @@ router.use((req, res, next) => {
 
 router.use('/register', await import("./register.js").then((res) => res.default));
 router.use('/auth', await import("./auth.js").then((res) => res.default));
+router.use('/logout', await import("./logout.js").then((res) => res.default));
+router.use('/refresh', await import("./refresh.js").then((res) => res.default));
 
 router.use(verifyJWT);
 router.use('/users', await import("./api/users.js").then((res) => res.default));
