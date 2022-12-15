@@ -3,6 +3,7 @@ dotenv.config()
 import express from "express";
 import path from "path";
 import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
 import { logger } from "./middleware/logEvents.js";
 import errorHandler from './middleware/errorHandler.js';
 import connectDB from './config/dbConn.js';
@@ -21,6 +22,7 @@ app.use(logger);
 app.use(express.json());
 
 // middleware for cookies
+app.use(cookieParser());
 
 //serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
