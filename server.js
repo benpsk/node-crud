@@ -17,7 +17,6 @@ connectDB();
 // custom middleware logger
 app.use(logger);
 
-
 // built-in middleware for json 
 app.use(express.json());
 
