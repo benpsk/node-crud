@@ -19,6 +19,7 @@ router.use('/refresh', await import("./refresh.js").then((res) => res.default));
 
 router.use(verifyJWT);
 router.use('/users', await import("./api/users.js").then((res) => res.default));
+router.use('/employees', await import("./api/employees.js").then((res) => res.default));
 
 router.all('*', (req, res) => {
     res.status(404);
